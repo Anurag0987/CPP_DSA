@@ -1,0 +1,17 @@
+Welcome to the Program!
+Welcome to the Program! Anurag
+Welcome to the Program! Medfold
+6
+7
+minimun of 2 nums: 67
+In findMax function !Returns garbage value if no trurn line for return type functions -- 1878006336
+100
+110
+120
+pass by value not effected -- 100
+90
+270
+810
+pass by reference with just & the original value effected -- 810
+Value of arr inside the function ==> 35
+3rd index value of in Int Main function -- 35
