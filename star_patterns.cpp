@@ -58,7 +58,7 @@ void pattern6(int n){
 void pattern7(int n){
     // The code can be made shorter and cleaner, but the time complexitity remain same as any other solution for this, i.e., O(n2)
     for(int i=1; i<=n; i++){
-        for (int j = 0; j < n-i; j++)
+        for (int j = 0; j < 2*i-1; j++)
         {
             cout << " ";
         }
@@ -66,7 +66,25 @@ void pattern7(int n){
         {
             cout << "*";
         }
-        for (int l = 0; l < n-i; l++)
+        for (int l = 0; l < 2*i-1; l++)
+        {
+            cout << " ";
+        }
+        cout << "\n";
+    }
+}
+
+void pattern8(int n){
+    for(int i=1; i<=n; i++){
+        for (int j = 0; j < i; j++)
+        {
+            cout << " ";
+        }
+        for (int k = 1; k < 2*n-2*(i-1); k++)
+        {
+            cout << "*";
+        }
+        for (int l = 0; l < i; l++)
         {
             cout << " ";
         }
@@ -83,6 +101,7 @@ int main(){
     // pattern4(n);
     // pattern5(n);
     // pattern6(n);
-    pattern7(n);
+    // pattern7(n);
+    pattern8(n);
     return 0;
 }
