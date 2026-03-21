@@ -58,7 +58,7 @@ void pattern6(int n){
 void pattern7(int n){
     // The code can be made shorter and cleaner, but the time complexitity remain same as any other solution for this, i.e., O(n2)
     for(int i=1; i<=n; i++){
-        for (int j = 0; j < 2*i-1; j++)
+        for (int j = 0; j < n-i; j++)
         {
             cout << " ";
         }
@@ -66,7 +66,7 @@ void pattern7(int n){
         {
             cout << "*";
         }
-        for (int l = 0; l < 2*i-1; l++)
+        for (int l = 0; l < n-1; l++)
         {
             cout << " ";
         }
@@ -92,6 +92,63 @@ void pattern8(int n){
     }
 }
 
+void pattern9(int n){
+    for(int i=1; i<=2*n; i++){
+        if(i <= (2*n)/2){
+            for (int j = 0; j < n-i; j++)
+            {
+                cout << " ";
+            }
+            for (int k = 0; k < 2*i-1; k++)
+            {
+                cout << "*";
+            }
+            for (int l = 0; l < n-i; l++)
+            {
+                cout << " ";
+            }
+        }else{
+            for (int m = 1; m < i-n; m++)
+            {
+                cout << " ";
+            }
+            for (int o = 0; o < 2*n-2*(i-n)+1; o++)
+            {
+                cout << "*";
+            }
+            for (int p = 1; p < i-n; p++)
+            {
+                cout << " ";
+            }
+        }
+        cout << "\n";
+    }
+}
+// for patter9 we can have many solutions, the above one also correct just more complex to read and maintain
+// In programming code readability, ligic simplicity is as important as Time complexity, all solution have O(n2)
+// Even simpler is just print the patter 7 & 8 one after other ro get pattern9
+// Here is one more solution
+void pattern9_2(int n){
+    int row;
+    for (int i = 1; i <= 2*n; i++)
+    {
+        if(i <=n)
+            row = i;
+        else
+            row = 2 * n - i + 1;
+
+        //spaces only front
+        for(int j = 0; j < n - row; j++){
+            cout << " ";
+        }
+        for (int k = 0; k < 2 * row - 1; k++)
+        {
+            cout << "*";
+        }
+        cout << "\n";
+    }
+}
+
 int main(){
     int n;
     cin >> n;
@@ -102,6 +159,8 @@ int main(){
     // pattern5(n);
     // pattern6(n);
     // pattern7(n);
-    pattern8(n);
+    // pattern8(n);
+    // pattern9(n);
+    pattern9_2(n);
     return 0;
 }
