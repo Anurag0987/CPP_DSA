@@ -181,6 +181,20 @@ void pattern10_2(int n){
     }
 }
 
+void pattern11(int n){    
+    for (int i = 1; i <= n; i++)
+    {
+        int startsWith = (i % 2 == 0) ? 0 : 1;
+        for (int j = 1; j <= i; j++)
+        {
+            cout << startsWith;
+            // startsWith = startsWith == 0 ? 1 : 0; // <<-- Both of this work
+            startsWith = 1 - startsWith; // <<-- Both of this work
+        }
+        cout << "\n";
+    }
+}
+
 int main(){
     int n;
     cin >> n;
@@ -193,6 +207,9 @@ int main(){
     // pattern7(n);
     // pattern8(n);
     // pattern9(n);
-    pattern10_2(n);
+    // pattern9_2(n);
+    // pattern10(n);
+    // pattern10_2(n);
+    pattern11(n);
     return 0;
 }
