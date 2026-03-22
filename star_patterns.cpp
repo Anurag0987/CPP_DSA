@@ -241,6 +241,28 @@ void pattern14(int n){
         cout << "\n";
     }
 }
+// OR we can do this as well
+void pattern14_2(int n){
+    for (int i = 0; i < n; i++)
+    {
+        for (char j = 'A'; j <= 'A' + i; j++)
+        {
+            cout << j;   
+        }
+        cout << "\n";
+    }
+}
+
+void pattern15(int n){
+    for (int i = 0; i < n; i++)
+    {
+        for (char j = 'A'; j < ('A' + (n-i)); j++)
+        {
+            cout << j;
+        }
+        cout << "\n";
+    }
+}
 
 int main(){
     int n;
@@ -260,6 +282,8 @@ int main(){
     // pattern11(n);
     // pattern12(n);
     // pattern13(n);
-    pattern14(n);
+    // pattern14(n);
+    // pattern14_2(n);
+    pattern15(n);
     return 0;
 }
