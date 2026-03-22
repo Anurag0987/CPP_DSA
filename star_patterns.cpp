@@ -149,6 +149,38 @@ void pattern9_2(int n){
     }
 }
 
+void pattern10(int n){
+    int totalRows = 2*n;
+    for (int i = 1; i <= totalRows; i++)
+    {
+        if(i <= n){
+            for (int j = 1; j <= i; j++)
+            {
+                cout << "*";
+            }
+        }else{
+            for (int k = totalRows; k > i; k--)
+            {
+                cout << "*";
+            }
+        }
+        cout << "\n";
+    }
+}
+
+void pattern10_2(int n){    
+    for (int i = 1; i <= 2*n-1; i++)
+    {
+        int stars = i;
+        if(i > n) stars = 2*n-i;
+        for (int j = 1; j <= stars; j++)
+        {
+            cout << "*";
+        }
+        cout << "\n";
+    }
+}
+
 int main(){
     int n;
     cin >> n;
@@ -161,6 +193,6 @@ int main(){
     // pattern7(n);
     // pattern8(n);
     // pattern9(n);
-    pattern9_2(n);
+    pattern10_2(n);
     return 0;
 }
