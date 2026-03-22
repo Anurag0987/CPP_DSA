@@ -58,14 +58,17 @@ void pattern6(int n){
 void pattern7(int n){
     // The code can be made shorter and cleaner, but the time complexitity remain same as any other solution for this, i.e., O(n2)
     for(int i=1; i<=n; i++){
+        // Pattern
         for (int j = 0; j < n-i; j++)
         {
             cout << " ";
         }
+        // Space
         for (int k = 0; k < 2*i-1; k++)
         {
             cout << "*";
         }
+        // Pattern
         for (int l = 0; l < n-1; l++)
         {
             cout << " ";
@@ -214,6 +217,31 @@ void pattern12(int n){
     }
 }
 
+void pattern13(int n){
+    int startNum = 1;
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            cout << startNum << " ";
+            startNum += 1;
+        }
+        cout << "\n";
+    }
+}
+
+void pattern14(int n){
+    for (int i = 1; i <= n; i++)
+    {
+        char startChar = 'A';
+        for (int j = 1; j <= i; j++)
+        {
+            cout << startChar++;   
+        }
+        cout << "\n";
+    }
+}
+
 int main(){
     int n;
     cin >> n;
@@ -230,6 +258,8 @@ int main(){
     // pattern10(n);
     // pattern10_2(n);
     // pattern11(n);
-    pattern12(n);
+    // pattern12(n);
+    // pattern13(n);
+    pattern14(n);
     return 0;
 }
