@@ -264,6 +264,61 @@ void pattern15(int n){
     }
 }
 
+void pattern16(int n){
+    char startChar = 'A';
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            cout << startChar;
+        }
+        startChar++;
+        cout << "\n";
+    }
+}
+
+void pattern17(int n){
+    for (int i = 0; i < n; i++)
+    {
+        //Space
+        for (int j = 0; j < n-i; j++)
+        {
+            cout << " ";
+        }
+        char tempChar;
+        for (char k = 'A'; k <= 'A'+i; k++)
+        {
+            cout << k;
+            tempChar = k;
+        }
+        for (char l = --tempChar; l > tempChar - (i); --l)
+        {
+            cout << l;
+        }
+        cout << "\n";
+    }
+}
+// Or below
+void pattern17_2(int n){
+    for (int i = 1; i <= n; i++)
+    {
+        //Space
+        for (int j = 0; j < n-i; j++)
+        {
+            cout << " ";
+        }
+        //Pattern
+        char ch = 'A';
+        int breakPoint = (2*i-1) / 2;
+        for (int k = 1; k <= 2*i-1; k++)
+        {
+            cout << ch;
+            if(k <= breakPoint) ch++;
+            else ch--;
+        }
+        cout << "\n";
+    }
+}
 int main(){
     int n;
     cin >> n;
@@ -284,6 +339,9 @@ int main(){
     // pattern13(n);
     // pattern14(n);
     // pattern14_2(n);
-    pattern15(n);
+    // pattern15(n);
+    // pattern16(n);
+    // pattern17(n);
+    pattern17_2(n);
     return 0;
 }
