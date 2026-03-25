@@ -497,6 +497,41 @@ void pattern21_2(int n){
     }
 }
 
+void pattern22(int n){
+    int totalRows = 2*n;
+    // find the minimum distance of the point in matrix and just do (n-min_distance)
+    // 4444444
+    // 4333334
+    // 4322234
+    // 4321234
+    // 4322234
+    // 4333334
+    // 4444444
+    for (int i = 0; i < totalRows-1; i++)
+    {
+        for (int j = 0; j < totalRows-1; j++)
+        {
+            // min (left, right, top, bottom)
+            int firstMin = min(j, totalRows-2-j);
+            int secMin = min(firstMin, i);
+            int thiMin = min(secMin, totalRows-2-i);
+            // or min(j, min (totalRows-2-j, min (i, totalRows-2-i)))
+            int val = n-thiMin;
+            cout << val;
+            // if (i == 0 || i == totalRows-2 || j == 0 || j == totalRows-2){
+                //     cout << n;
+                // }else if (i == 1 || i == totalRows-3 || j == 1 || j == totalRows-3){
+                    //     cout << n-1;
+                    // }else if (i == 2 || i == totalRows-4 || j == 2 || j == totalRows-4){
+                        //     cout << n-2;
+                        // }else{
+                            //     cout << n-3;
+                            // }
+        }
+        cout << "\n";
+    }
+}
+
 int main()
 {
     int n;
@@ -526,6 +561,7 @@ int main()
     // pattern19(n);
     // pattern20(n);
     // pattern21(n);
-    pattern21_2(n);
+    // pattern21_2(n);
+    pattern22(n);
     return 0;
 }
