@@ -48,4 +48,29 @@ int main(){
     // real difference -- pair, class, struct
     // for int, char, float, -- almost same speed
 
+    // dVarious ways of initializing vector;
+    vector<int> vec1;
+    vector<int> vec2(5); // creates vector with initial size 5, fills values with 0
+    cout << vec2[0] << ", " << vec2[1] << ", " << vec2[4] << ", " << "\n";
+    vector<int> vec3(5, 89); // creates vector with size 5, fills values with 89
+    cout << vec3[0] << ", " << vec3[1] << ", " << vec3[4] << ", " << "\n";
+
+    // some useful functions
+    vector<int> v2 = {1, 2, 3, 4, 5};
+    
+    // pop_back() <-- remove last element
+    cout << "before pop_back() size - " << v2.size() << "\n";
+    v2.pop_back();
+    cout << "after pop_back() size - " << v2.size() << "\n";
+    
+    // .empty() <<-- return true if vector is empty
+    vector<int> v3;
+    cout << "v2 has elements empty() check - " << v2.empty() << "\n";
+    cout << "v3 has no elements empty() check - " << v3.empty() << "\n";
+
+    // .clear() <<-- removes all elements from the vector
+    cout << "before clear() size - " << v2.size() << "\n";
+    v2.clear();
+    cout << "after clear() size - " << v2.size() << "\n";
+    
 }
