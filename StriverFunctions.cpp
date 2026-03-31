@@ -77,7 +77,7 @@ int main(){
 
     // return function return' garbage value if not specicied (basically all non void functions are return functions)
 
-    cout << "Returns garbage value if no trurn line for return type functions -- " << findMax(5, 6) << endl;
+    cout << "Returns garbage value if no return line for return type functions -- " << findMax(5, 6) << endl;
 
     // Pass by value
     int value1 = 100;
