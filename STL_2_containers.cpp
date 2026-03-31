@@ -68,9 +68,95 @@ int main(){
     cout << "v2 has elements empty() check - " << v2.empty() << "\n";
     cout << "v3 has no elements empty() check - " << v3.empty() << "\n";
 
+    // back() // <<-- gets last element of vector
+    cout << "last element of v2 using .back() " << v2.back() << "\n";
+
     // .clear() <<-- removes all elements from the vector
     cout << "before clear() size - " << v2.size() << "\n";
     v2.clear();
     cout << "after clear() size - " << v2.size() << "\n";
+
+    
+    // Iterating Vectors
+    
+    vector<int> v4 = {12, 13, 14, 15, 26};
+    // basic index loop
+    for (int i = 0; i < v4.size(); i++)
+    {
+        cout<< v4[i] << " ";
+    }
+    cout << endl;
+    
+    // Modern way
+    for (int x : v4)
+    {
+        cout<< x << " ";
+    }
+    cout << endl;
+
+    // Copy vector to another vector
+    vector<int> v5(v4);
+    cout << "size v5 copy of v4 - " << v5.size() << "\n";
+
+    // **Iterators**
+    // Another way of iterating vectors
+    // Iterator -- and object that behaves like pointer to traverse and access elements of Container of STL like vector, list, map.
+    // Iterator points to memory address rather than value
+    vector<int>::iterator iterAdd = v5.begin();
+    // exmpale memory addess of 1st index
+    cout << ".begin() gets 1st index memory address - " << &iterAdd << "\n";
+    // To access the value use *
+    cout << "1st index value of v5 with iterators - " << *iterAdd << "\n";
+    // or
+    cout << "1st index value of v5 with iterators - " << *(iterAdd) << "\n";
+
+    // ** elements in vector are stored in contiguous memory (continuous)
+    // so just increase the memory address counter to access next element
+    iterAdd++;
+    cout << "2nd index value of v5 with iterators - " << *(iterAdd) << "\n";
+
+    iterAdd+=2;
+    cout << "4th index value of v5 with iterators - " << *(iterAdd) << "\n";
+
+    // other iterators just to know basics --not used widely--
+    vector<int>::iterator iterEnd = v5.end(); //<< -- Points address right after the end index, not at the end index
+    iterEnd--;
+    cout << "last index value of v5 with iterators - " << *(iterEnd) << "\n";
+    
+    // these below 2 are throwing errors, leaving it as not widely used
+    // vector<int>::iterator iterREnd = v5.rend();
+    // vector<int>::iterator iterRBegin = v5.rbegin();
+    
+    // Loop using iterators
+    for(vector<int>::iterator it = v5.begin(); it != v5.end(); it++){
+        cout << "element-" << *it << "\n";
+    }
+    cout << "---------" << "\n";
+
+    // shortcut for above loop using auto
+    for(auto it = v5.begin(); it < v5.end(); it++){
+        cout << "element-" << *it << "\n";
+    }
+    cout << "---------" << "\n";
+
+    // further more
+    for(auto it : v5){ //<< -- here auto means automitically detect DType of vector, same as (int it : v5)
+        cout << "element-" << it << "\n";
+    }
+    cout << "---------" << "\n";
+
+    vector<char> v6 = {'i', 'j', 'k'};
+    for(auto it : v6){ //<< -- here auto means automitically detect DType of vector, same as (char it : v5)
+        cout << "element-" << it << "\n";
+    }
+    cout << "---------" << "\n";
+
+
+    // other than iterators auto can be used as placeholder and automatically inherits the type of value is it is assigned to
+    auto unknownDTypeFloat = 99.9;
+    auto unknownDTypeString = "Anurag";
+    cout << "auto can be helpful when Dtype is unknown - " << typeid(unknownDTypeFloat).name() << "\n";
+    cout << "auto can be helpful when Dtype is unknown - " << typeid(unknownDTypeString).name() << "\n";
+
     
 }
