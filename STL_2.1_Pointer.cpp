@@ -8,7 +8,7 @@ int main(){
     cout << "Address of x: " << &x << "\n";
 
     // Pointer = Variable that stores address of another variable.
-    int *p = &x;
+    int *p = &x; // <-- '&' is used for "Pass by reference"
     // p stores address of x
     // *p means go to address of p and get the value
 
@@ -20,5 +20,14 @@ int main(){
     cout << "New value of x: " << x << "\n";
     cout << "New value of p: " << *p << "\n";
 
+    int y = 10;
 
+    int *p1 = &y;   // pointer
+    int &r = y;    // reference
+
+    cout << "value of p1: " << p1 << "\n";
+    cout << "value of p1: " << *p1 << "\n";
+
+    cout << "value of r: " << r << "\n";
+    cout << "value of r: " << &r << "\n";
 }
