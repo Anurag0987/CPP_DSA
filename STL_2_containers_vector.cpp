@@ -225,4 +225,33 @@ int main(){
         cout << xx << " " ;
     }
     cout << "---------" << "\n";
+
+    // .swap() -- just swaps the variable names of 2 vectors.
+    vector<int>vs1 = {8, 9, 10, 11};
+    vector<int>vs2 = {18, 19, 20, 21};
+
+    cout << "before swap()" << endl;
+    cout << "vs1: ";
+    for(int xx : vs1){
+        cout << xx << " " ;
+    }
+    cout << endl;
+    cout << "vs2: ";
+    for(int xx : vs2){
+        cout << xx << " " ;
+    }
+    cout << "---------" << "\n";
+
+    vs1.swap(vs2);
+    cout << "vs1: ";
+    for(int xx : vs1){
+        cout << xx << " " ;
+    }
+    cout << endl;
+    cout << "vs2: ";
+    for(int xx : vs2){
+        cout << xx << " " ;
+    }
+    cout << "---------" << "\n";
+
 }
