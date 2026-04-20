@@ -176,7 +176,7 @@ int main(){
     }
     cout << "---------" << "\n";
 
-    // delete any index value
+    // ------------- delete any index value ------------------
     vd.erase(vd.begin()+3);
     
     cout << "vd: values after erase 3rd index - " << endl;
@@ -195,5 +195,34 @@ int main(){
     }
     cout << "---------" << "\n";
 
+    // --------------- Insert into vector any position/index ---------------------
+    vector<int> vi1 = {10, 20, 40};
+    vi1.insert(vi1.begin(), 1); // .insert(index, value)
 
+    cout << "value inserted at start of vector: " << endl;
+    for(int xx : vi1){
+        cout << xx << " " ;
+    }
+    cout << "---------" << "\n";
+
+    // .insert() multiple value / range at once
+    // .insert(index, times, value)
+    vi1.insert(vi1.begin()+3, 3, 30);
+
+    cout << "Insert 30 3 times from index 3: " << endl;
+    for(int xx : vi1){
+        cout << xx << " " ;
+    }
+    cout << "---------" << "\n";
+
+    // insert a vector into another vector
+    vector<int>vi2 = {50, 60, 70, 80};
+    // .insert(index, begin, end)
+    vi1.insert(vi1.end(), vi2.begin(), vi2.end());
+
+    cout << "Insert vi2 into vi1 vector at index end: " << endl;
+    for(int xx : vi1){
+        cout << xx << " " ;
+    }
+    cout << "---------" << "\n";
 }
