@@ -158,5 +158,42 @@ int main(){
     cout << "auto can be helpful when Dtype is unknown - " << typeid(unknownDTypeFloat).name() << "\n";
     cout << "auto can be helpful when Dtype is unknown - " << typeid(unknownDTypeString).name() << "\n";
 
+    // Delete from Vector
+
+    vector<int> vd = {1, 2, 3, 4, 9, 10};
+    cout << "vd: values before erase - " << endl;
+    for(int xx : vd){
+        cout << xx << " " ;
+    }
+    cout << "---------" << "\n";
+
+    // .erase() take address of the index to be deleted as positional argument
+    vd.erase(vd.begin());
+
+    cout << "vd: values after erase - " << endl;
+    for(int xx : vd){
+        cout << xx << " " ;
+    }
+    cout << "---------" << "\n";
+
+    // delete any index value
+    vd.erase(vd.begin()+3);
     
+    cout << "vd: values after erase 3rd index - " << endl;
+    for(int xx : vd){
+        cout << xx << " " ;
+    }
+    cout << "---------" << "\n";
+
+    vector<int> vd2 = {11, 23, 34, 45, 56, 67};
+    // delete range of elements [start, end]
+    vd2.erase(vd2.begin()+1, vd2.begin()+4); // end = end + 1 (next) index value
+    
+    cout << "vd2: delete from index 1-3 - " << endl;
+    for(int xx : vd2){
+        cout << xx << " " ;
+    }
+    cout << "---------" << "\n";
+
+
 }
