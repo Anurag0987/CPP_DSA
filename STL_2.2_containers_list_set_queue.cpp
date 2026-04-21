@@ -1,9 +1,15 @@
 #include<bits/stdc++.h> //<-- this one library includes all essential libraries like math.h, stringh.h, <utility>
 using namespace std;
 
+// Indexing allowed in 
+//    - Vector, deque, array
+// Indexing Not allowed in
+//    - List, stack, set, map
+
 // Lists
 void exploreList(){
     // Similar to vectors, but has direct front function
+    // No Indexing - Internal structure is double linked list unlike vector which is dynamic array
     // which is more efficient in time complixity when compared to insert in vectors
 
     list<int> l1 = {1, 2};
@@ -67,6 +73,7 @@ void exploreDeque(){
     // has pop_back, pop_front, back(), front() which are efficient in time complexity O(1)
     deque<int> d1 = {10, 11, 12, 13};
 
+    cout << "indexing is allowed in deque: " << d1[0] << "\n";
     cout << "elements of deque d1: ";
     for(int x : d1){
         cout << " # " << x ;
@@ -118,7 +125,35 @@ void exploreDeque(){
     cout << "\n";
 }
 
+void exploreStack(){
+    // Stack is a LIFO structure
+    // No Indexing - Internal structure is tree
+    // Main 3 function push(), pop(), top() - O(1) 
+    // No other methods, like erase(). insert(), begin(), end(), iterators - defets the purpose of stack
+
+    stack<int> s1;
+    s1.push(10);
+    s1.push(11);
+    s1.emplace(13);
+
+    // Get Top element of Stack
+    cout << "Top element of stack : " << s1.top();
+    cout << "\n";
+
+    cout << "Size if stack : " << s1.size();
+    cout << "\n";
+
+    s1.pop();
+
+    cout << "Size if stack after pop() : " << s1.size();
+    cout << "\n";
+
+    cout << "Top element of stack after pop() : " << s1.top();
+    cout << "\n";
+}
+
 int main(){
     // exploreList();
-    exploreDeque();
+    // exploreDeque();
+    exploreStack();
 }
