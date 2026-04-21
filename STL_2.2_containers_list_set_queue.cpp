@@ -131,6 +131,8 @@ void exploreStack(){
     // Main 3 function push(), pop(), top() - O(1) 
     // No other methods, like erase(). insert(), begin(), end(), iterators - defets the purpose of stack
 
+    // cannot directly initialize like this --- stack<int> s1 ----;
+    // must use push(), pop(), to insert ot remove
     stack<int> s1;
     s1.push(10);
     s1.push(11);
@@ -150,10 +152,59 @@ void exploreStack(){
 
     cout << "Top element of stack after pop() : " << s1.top();
     cout << "\n";
+
+    // can modify elements like
+    s1.top() += 6;
+
+    cout << "Top element of stack after addition : " << s1.top();
+    cout << "\n";
+}
+
+void exploreQueue(){
+    // Queue is FIFO structure
+    // No Indexing
+    // Mian methods - push(). emplace(), back(), front(), pop()
+    queue<int> q1;
+    q1.push(23);
+    q1.push(34);
+    q1.emplace(45);
+    q1.emplace(56);
+
+    // Get front element of quque
+    cout << "front element of queue : " << q1.front();
+    cout << "\n";
+
+    // Get back element of quque
+    cout << "back element of queue : " << q1.back();
+    cout << "\n";
+
+    cout << "Size of queue : " << q1.size();
+    cout << "\n";
+
+    q1.pop();
+
+    cout << "Size of queue after pop() : " << q1.size();
+    cout << "\n";
+
+    cout << "front element of queue after pop() : " << q1.front();
+    cout << "\n";
+
+    // can modify elements like
+    q1.front() += 6;
+
+    cout << "front element of queue after addition : " << q1.front();
+    cout << "\n";
+
+    q1.back() += 8;
+
+    cout << "back element of queue after addition : " << q1.back();
+    cout << "\n";
+
 }
 
 int main(){
     // exploreList();
     // exploreDeque();
-    exploreStack();
+    // exploreStack();
+    exploreQueue();
 }
