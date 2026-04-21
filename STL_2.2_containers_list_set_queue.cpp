@@ -39,7 +39,7 @@ void exploreList(){
 
     cout << "elements of list l1: ";
     for(int x : l1){
-        cout << " * " << x ;
+        cout << " # " << x ;
     }
     cout << "\n";
 
@@ -55,12 +55,70 @@ void exploreList(){
 
     cout << "elements of list l2: ";
     for(int x : l2){
-        cout << " * " << x ;
+        cout << " # " << x ;
     }
     cout << "\n";
 
 }
 
+void exploreDeque(){
+    // similar to vector and list
+    // It's a double ended, can insert access elements from both sides
+    // has pop_back, pop_front, back(), front() which are efficient in time complexity O(1)
+    deque<int> d1 = {10, 11, 12, 13};
+
+    cout << "elements of deque d1: ";
+    for(int x : d1){
+        cout << " # " << x ;
+    }
+    cout << "\n";
+    d1.push_back(14);
+    d1.emplace_back(15);
+
+    d1.push_front(9);
+    d1.emplace_front(8);
+    
+    cout << "elements of deque d1: ";
+    for(int x : d1){
+        cout << " # " << x ;
+    }
+    cout << "\n";
+    
+    // 
+    d1.pop_front();
+    cout << "elements of deque after pop_front d1: ";
+    for(int x : d1){
+        cout << " # " << x ;
+    }
+    cout << "\n";
+
+    d1.pop_back();
+    cout << "elements of deque after pop_back d1: ";
+    for(int x : d1){
+        cout << " # " << x ;
+    }
+    cout << "\n";
+
+    cout << "back element iof deque d1: " << d1.back();
+    cout << "\n";
+
+    cout << "front element iof deque d1: " << d1.front();
+    cout << "\n";
+
+    cout << "size of deque d1 : " << d1.size();
+    cout << "\n";
+
+    // rest functions are same
+    // empty, begin, end, erase, insert, size, swap, clear
+    d1.erase(d1.begin()+1, d1.end()-2);
+    cout << "elements of deque after erase range d1: ";
+    for(int x : d1){
+        cout << " # " << x ;
+    }
+    cout << "\n";
+}
+
 int main(){
-    exploreList();
+    // exploreList();
+    exploreDeque();
 }
