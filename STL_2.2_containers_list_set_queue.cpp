@@ -278,6 +278,11 @@ void exploreSet(){
     cout << "count() of set existing element " << st.count(8);
     cout << "\n";
     cout << "count() of set non existing element " << st.count(88);
+    cout << "\n";
+
+    auto firstSetEle = st.begin(); // also can't do st.begin()+1 as this is not indexing container
+    cout << "iterator begin() element - " << *firstSetEle;
+    cout << "\n";
 }
 
 
