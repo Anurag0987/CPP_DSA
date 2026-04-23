@@ -263,6 +263,15 @@ void exploreSet(){
     }
     cout << "\n";
 
+    // find element in set
+    auto it = st.find(8); // <<-- this gives iterator (address) instead of value
+    cout << "iterator - " << *it;
+    cout << "\n";
+
+    // count() in set says 0 or 1 as only one instance of element exists due to unique capability of set
+    cout << "count() of set existing element " << st.count(8);
+    cout << "\n";
+    cout << "count() of set non existing element " << st.count(88);
 }
 
 
