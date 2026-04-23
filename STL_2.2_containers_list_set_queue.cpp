@@ -207,6 +207,10 @@ void priorityQueue(){
     // No indexing
     // Main methods - Push, Pop, Top
     // Default priority_queue is called as Maximum Heap
+    // Time Complexity of PQ
+    // Push - Log(n)
+    // top - O(1)
+    // Pop - Log(n)
 
     // ------------- Maximum Heap ---------------------
     priority_queue<int> pq;
@@ -240,13 +244,33 @@ void priorityQueue(){
     cout << "Top element of Priority Queue -- " << pq_min.top() << "\n";
 
     // rest methods are size and swap
+}
+
+void exploreSet(){
+    // Set - Unique and Ordered
+    // Non linear, No indexing
+    set<int> st;
+    st.insert(1);
+    st.insert(99);
+    st.emplace(8);
+    st.emplace(8);
+    st.insert(8);
+    st.emplace(6);
+
+    cout << "elements of set unique and ordered" << "\n";
+    for(auto x : st){
+        cout << " - " << x;
+    }
+    cout << "\n";
 
 }
+
 
 int main(){
     // exploreList();
     // exploreDeque();
     // exploreStack();
     // exploreQueue();
-    priorityQueue();
+    // priorityQueue();
+    exploreSet();
 }
