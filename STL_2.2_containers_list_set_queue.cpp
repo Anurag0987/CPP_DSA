@@ -202,9 +202,51 @@ void exploreQueue(){
 
 }
 
+void priorityQueue(){
+    // Priority Queue is a non linear data structure - stores values in sorted order largest bring top
+    // No indexing
+    // Main methods - Push, Pop, Top
+    // Default priority_queue is called as Maximum Heap
+
+    // ------------- Maximum Heap ---------------------
+    priority_queue<int> pq;
+
+    pq.push(10);
+    pq.push(8);
+    pq.emplace(1);
+    pq.emplace(76);
+    pq.emplace(2);
+
+    cout << "Top element of Priority Queue -- " << pq.top() << "\n";
+
+    pq.pop(); // <<-- pops the top element
+
+    cout << "Top element of Priority Queue -- " << pq.top() << "\n";
+
+    // ------------- Minimum Heap ---------------------
+    // opposit of Max Heap, stores in reverse order smallest on top
+    priority_queue<int, vector<int>, greater<int>> pq_min;
+
+    pq_min.push(10);
+    pq_min.push(8);
+    pq_min.emplace(1);
+    pq_min.emplace(76);
+    pq_min.emplace(2);
+
+    cout << "Top element of Priority Queue -- " << pq_min.top() << "\n";
+
+    pq_min.pop(); // <<-- pops the top element
+
+    cout << "Top element of Priority Queue -- " << pq_min.top() << "\n";
+
+    // rest methods are size and swap
+
+}
+
 int main(){
     // exploreList();
     // exploreDeque();
     // exploreStack();
-    exploreQueue();
+    // exploreQueue();
+    priorityQueue();
 }
