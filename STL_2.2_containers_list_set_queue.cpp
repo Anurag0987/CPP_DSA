@@ -300,6 +300,30 @@ void exploreSet(){
         cout << " - " << x;
     }
     cout << "\n";
+
+    //
+    set<int> st2;
+    st2.insert(1);
+    st2.insert(99);
+    st2.emplace(8);
+    st2.insert(8);
+    st2.emplace(16);
+    st2.emplace(60);
+    st2.emplace(56);
+    st2.emplace(3);
+
+    // .erase() from start to end
+    auto start_it = st2.find(8);
+    auto end_it = st2.find(60);
+
+    st2.erase(start_it, end_it);
+
+    cout << "elements of set after erase start end-1" << "\n";
+    for(auto x : st2){
+        cout << " - " << x;
+    }
+    cout << "\n";
+
 }
 
 
