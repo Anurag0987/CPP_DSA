@@ -291,6 +291,15 @@ void exploreSet(){
         cout << " - " << x;
     }
     cout << "\n";
+
+    // .erase() take direct value or iterater address like below
+    auto it2 = st.find(1);
+    st.erase(it2);
+    cout << "elements of set after erase" << "\n";
+    for(auto x : st){
+        cout << " - " << x;
+    }
+    cout << "\n";
 }
 
 
