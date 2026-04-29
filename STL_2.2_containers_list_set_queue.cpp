@@ -268,7 +268,7 @@ void exploreSet(){
     cout << "iterator of existing element - " << *it;
     cout << "\n";
 
-    // also is element doesn't in the set then it points to .end() + 1 address of set
+    // also if element in not in the set then it points to .end() + 1 address of set
     auto it1 = st.find(7); // <<-- this gives iterator (address) .end() + 1 instead of value
     cout << "iterator of non existing element- " << *it1;
     cout << "\n";
@@ -282,6 +282,14 @@ void exploreSet(){
 
     auto firstSetEle = st.begin(); // also can't do st.begin()+1 as this is not indexing container
     cout << "iterator begin() element - " << *firstSetEle;
+    cout << "\n";
+
+    // .erase()
+    st.erase(99);
+    cout << "elements of set after erase" << "\n";
+    for(auto x : st){
+        cout << " - " << x;
+    }
     cout << "\n";
 }
 
