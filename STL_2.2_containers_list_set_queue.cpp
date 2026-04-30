@@ -249,6 +249,7 @@ void priorityQueue(){
 void exploreSet(){
     // Set - Unique and Ordered
     // Non linear, No indexing
+    // Set operations happens in - logN complexity
     set<int> st;
     st.insert(1);
     st.insert(99);
