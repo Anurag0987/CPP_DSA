@@ -119,4 +119,8 @@ int main() {
     auto it_lb_of_vector = lower_bound(arr1.begin(), arr1.end(), 6);
     cout << "lower_bound() in build method *it value - " << (it_lb_of_vector - arr1.begin()); // <-- as we cannot cout the oterator directly
     cout << "\n";
+
+    auto it_ub_of_vector = upper_bound(arr1.begin(), arr1.end(), 6);
+    cout << "lower_bound() in build method *it value - " << (it_ub_of_vector - arr1.begin()); // <-- as we cannot cout the oterator directly
+    cout << "\n";
 }
