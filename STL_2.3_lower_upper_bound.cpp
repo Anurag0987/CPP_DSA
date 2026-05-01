@@ -20,7 +20,7 @@ using namespace std;
 // .lower_bound and .upper_bound used **Binary Search** algorithm to qucikly find the near smallest index in sorted conatiner.
 // Binary search works on sorted array anyway
 
-void explainLowerBound(){
+void explainLowerBound(vector<int> arr, int lenOfArr, int num){
     // .lower_bound() -> smalles index(*it) where arr[index] >= num
     // If multiple .lower_bound() give first occurance
     // arr = {1, 3, 5, 6, 7, 7, 88, 91}
@@ -42,6 +42,22 @@ void explainLowerBound(){
     // num = 4
     // .lower_bound(4) --> index = 8
 
+    //Algorithm of .lower_bound() <- binary search
+    int low = 0;
+    int high = lenOfArr;
+    int x = lenOfArr; // <-- assume 'x' the *it index is 
+    while(low <= high){
+        int mid = (low+high)/2;
+
+        if(arr[mid] >= num){
+            x = mid;
+            high = mid - 1;
+        } else {
+            low = mid + 1;
+        }
+    }
+
+    cout << "smallest index (*it) value of lower_bound in given arr is -- " << x;
 }
 
 void explainUpperBound(){
@@ -68,6 +84,11 @@ void explainUpperBound(){
 }
 
 int main() {
-    explainLowerBound();
+    vector<int> arr1 = {3, 6, 9, 24, 24, 25, 56, 76, 88, 88, 91}; // <-- sroted array
+    int lenOfArr = arr1.size();
+    int numToFind = 6;
+
+    explainLowerBound(arr1, lenOfArr, numToFind);
+    
     explainUpperBound();
 }
