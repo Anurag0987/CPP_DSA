@@ -58,9 +58,10 @@ void explainLowerBound(vector<int> arr, int lenOfArr, int num){
     }
 
     cout << "smallest index (*it) value of lower_bound in given arr is -- " << x;
+    cout << "\n";
 }
 
-void explainUpperBound(){
+void explainUpperBound(vector<int> arr, int lenOfArr, int num){
     // .upper_bound() -> smalles index(*it) where arr[index] > num
     // If multiple .upper_bound() give first occurance
     // arr = {1, 3, 5, 6, 7, 7, 88, 91}
@@ -81,6 +82,25 @@ void explainUpperBound(){
 
     // num = 4
     // .lower_bound(4) --> index = 8
+
+    //Algorithm of .lower_bound() <- binary search
+    int low = 0;
+    int high = lenOfArr;
+    int x = lenOfArr; // <-- assume 'x' the *it index is 
+    while(low <= high){
+        int mid = (low+high)/2;
+
+        if(arr[mid] > num){
+            x = mid;
+            high = mid - 1;
+        } else {
+            low = mid + 1;
+        }
+    }
+
+    cout << "smallest index (*it) value of upper_bound in given arr is -- " << x;
+    cout << "\n";
+
 }
 
 int main() {
@@ -90,5 +110,5 @@ int main() {
 
     explainLowerBound(arr1, lenOfArr, numToFind);
     
-    explainUpperBound();
+    explainUpperBound(arr1, lenOfArr, numToFind);
 }
