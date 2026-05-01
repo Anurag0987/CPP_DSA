@@ -148,4 +148,16 @@ int main() {
     cout << "upper_bound syntax retunr for set non indexing container = " << *up_set_value;
     cout << "\n";
 
+    // -----------Important Iterator return values of Index-Based containers and Tree-Based containers
+    // Index-Bases Containers - iterators
+    // To get Index for lower or upper bound iterator we can just do (it - vector.begin()) <-- WORKS
+    // Since Index-Based containers have contiguous block of memory we can get the *index* easily
+
+    // BUT
+    // Tree-Based Containers - iterators
+    // They are not stored contiguously, and indexing can be bi-directional, can't do (it - set.begin()) <-- FAILS
+    // We can do something like std::diatance(set.begin(), it) <<-- Returns 'Index' <-- WORKS
+    // BUT NOT RECOMENDED -- for Tree-Based containers distance() takes O(n) time complixity
+    // so just get value directly with *it instead of index in Tree-Bases containers
 }
+
