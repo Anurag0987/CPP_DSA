@@ -111,4 +111,12 @@ int main() {
     explainLowerBound(arr1, lenOfArr, numToFind);
     
     explainUpperBound(arr1, lenOfArr, numToFind);
+
+    // ----------------------------
+    // In C++ we already have inbuild method for .lower_bound() and .upper_bound()
+    // No need to write the binary search code from scratch
+
+    auto it_lb_of_vector = lower_bound(arr1.begin(), arr1.end(), 6);
+    cout << "lower_bound() in build method *it value - " << (it_lb_of_vector - arr1.begin()); // <-- as we cannot cout the oterator directly
+    cout << "\n";
 }
