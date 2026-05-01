@@ -123,4 +123,29 @@ int main() {
     auto it_ub_of_vector = upper_bound(arr1.begin(), arr1.end(), 6);
     cout << "lower_bound() in build method *it value - " << (it_ub_of_vector - arr1.begin()); // <-- as we cannot cout the oterator directly
     cout << "\n";
+
+    // ****For sequential (Index based) containers the syntax is like above lower_bound(.begin(), .end(), num);
+    // sequential containers - vector, deque, array
+    // for array there is not begin(), end() so, need to do some indexing work
+
+    // **** Tree based containers like set, multiset, map, syntax changes
+    // set.lower_bound(num_to_find) --> return iterator of that container
+
+    set<int> s1;
+    s1.insert(1);
+    s1.emplace(4);
+    s1.emplace(5);
+    s1.emplace(5);
+    s1.emplace(9);
+    s1.emplace(90);
+    s1.emplace(17);
+    s1.emplace(56);
+
+    auto lb_set_value = s1.lower_bound(5);
+    auto up_set_value = s1.upper_bound(5);
+    cout << "lower_bound syntax retunr for set non indexing container = " << *lb_set_value;
+    cout << "\n";
+    cout << "upper_bound syntax retunr for set non indexing container = " << *up_set_value;
+    cout << "\n";
+
 }
