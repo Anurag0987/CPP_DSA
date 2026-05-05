@@ -401,7 +401,7 @@ void exploreUnorderedSet(){
     // lower_bound and upper_bound functions do not work for unordered_set (since it is not sorted)
     // rest methods are same as set
     // Most of the times Time Complexity - O(1) compared to Set which is O(log N)
-    // Only in rare worst cases the TC - O(n)
+    // Only in rare worst cases the TC - O(n) - very rare
     unordered_set<int> us1;
     us1.insert(1);
     us1.insert(4);
