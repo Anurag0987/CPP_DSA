@@ -395,6 +395,33 @@ void exploreMultiSet(){
 
 }
 
+void exploreUnorderedSet(){
+    // Unordered_set - similar to Set But no order(sorted), but Unique
+    // can store in any random order, not even in order of insert statements, random
+    // lower_bound and upper_bound functions do not work for unordered_set (since it is not sorted)
+    // rest methods are same as set
+    // Most of the times Time Complexity - O(1) compared to Set which is O(log N)
+    // Only in rare worst cases the TC - O(n)
+    unordered_set<int> us1;
+    us1.insert(1);
+    us1.insert(4);
+    us1.insert(4);
+    us1.insert(4);
+    us1.insert(8);
+    us1.insert(9);
+    us1.insert(10);
+    us1.insert(18);
+    us1.insert(28);
+    us1.insert(43);
+    us1.insert(81);
+
+    cout << "Elements in unordered_set us1 -- " << "\n";
+    for(auto x: us1){
+        cout << "-" << x;
+    }
+    cout << "\n";
+
+}
 
 int main(){
     // exploreList();
@@ -403,5 +430,6 @@ int main(){
     // exploreQueue();
     // priorityQueue();
     // exploreSet();
-    exploreMultiSet();
+    // exploreMultiSet();
+    exploreUnorderedSet();
 }
