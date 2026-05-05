@@ -249,7 +249,7 @@ void priorityQueue(){
 void exploreSet(){
     // Set - Unique and Ordered
     // Non linear, No indexing
-    // Set operations happens in - logN complexity
+    // Set operations happens in - O(logN) complexity
     set<int> st;
     st.insert(1);
     st.insert(99);
@@ -327,6 +327,74 @@ void exploreSet(){
 
 }
 
+void exploreMultiSet(){
+    // MultiSet - Same as Set my just not unique, can have multiple occurances, But still Sorted
+    // Non linear, No indexing
+
+    multiset<int>ms1;
+    
+    ms1.insert(1);
+    ms1.emplace(1);
+    ms1.emplace(1);
+    ms1.insert(2);
+    ms1.insert(2);
+    ms1.insert(4);
+    ms1.insert(6);
+
+    cout << "Elements in MultiSet -- " << "\n";
+    for(auto x: ms1){
+        cout << "-" << x;
+    }
+    cout << "\n";
+
+    // Since not unique - .count() will give count of values present instead of 0/1 like set
+    cout << "Occurances of 1 in ms1 - " << ms1.count(1);
+    cout << "\n";
+
+    cout << "Find in mulitset ms1 - " << *ms1.find(1); // <- .find() gives iterator
+    cout << "\n";
+
+    // .erase() will erase all occurances in set not just one
+    cout << "erase all occurances in mulitset ms1 - " ;
+    ms1.erase(1);
+    cout << "\n";
+
+    cout << "Elements in MultiSet after erase -- " << "\n";
+    for(auto x: ms1){
+        cout << "-" << x;
+    }
+    cout << "\n";
+
+    // if want to .erase single occurance use .find() give iterator which is uniuqe address
+    cout << "erase first  occurances of 2 in mulitset ms1 - " ;
+    ms1.erase(ms1.find(2));
+    cout << "\n";
+
+    cout << "Elements in MultiSet after it erase -- " << "\n";
+    for(auto x: ms1){
+        cout << "-" << x;
+    }
+    cout << "\n";
+
+    ms1.insert(6);
+    ms1.insert(7);
+    ms1.insert(9);
+    ms1.insert(10);
+    // can also do .erase(start, end+1)
+    cout << "erase from 1 index to 3 in mulitset ms1 - " ;
+    ms1.erase(ms1.find(4), ms1.find(7));
+    cout << "\n";
+
+    cout << "Elements in MultiSet after start end erase -- " << "\n";
+    for(auto x: ms1){
+        cout << "-" << x;
+    }
+    cout << "\n";
+
+    // rest methods same as set
+
+}
+
 
 int main(){
     // exploreList();
@@ -334,5 +402,6 @@ int main(){
     // exploreStack();
     // exploreQueue();
     // priorityQueue();
-    exploreSet();
+    // exploreSet();
+    exploreMultiSet();
 }
