@@ -450,7 +450,12 @@ void exploreMap(){
         cout << "first key " << x.first.first <<  " || second key " << x.first.second << " || value " << x.second << endl;
     }
     cout << endl;
+    
+    // directly access value with Keys
+    cout << "Value of mp1 at key 2 is " << mp1[2] << endl;
 
+    // .find() works on Keys, esle 0 or Null
+    // mp1.find(2);
 
 
 }
