@@ -423,6 +423,38 @@ void exploreUnorderedSet(){
 
 }
 
+void exploreMap(){
+    // Map stores key value pairs
+    // Data Type of key and value can be anything int, double, string etc..
+    // In Map the Keys are stored in Stoted Order, when finding with .find() iterators must use valid key esle gives 0 or Null
+
+    map<int, int> mp1;
+    map<pair<int, int>, int> mp2;
+
+    mp1[1] = 2;
+    mp1.insert({3,5});
+    mp1.emplace(2,6);
+    
+    // access key and value using .first and .second
+    cout << "elemented in map " << endl;
+    for (auto x: mp1){
+        cout << "key " << x.first << " || value " << x.second << endl;
+    }
+    cout << endl;
+
+    mp2[{6, 9}] = 15;
+    mp2.insert({{4,4}, 8});
+    mp2.emplace(make_pair(1,3), 4);
+    cout << "elemented in map mp2 " << endl;
+    for (auto x: mp2){
+        cout << "first key " << x.first.first <<  " || second key " << x.first.second << " || value " << x.second << endl;
+    }
+    cout << endl;
+
+
+
+}
+
 int main(){
     // exploreList();
     // exploreDeque();
@@ -431,5 +463,6 @@ int main(){
     // priorityQueue();
     // exploreSet();
     // exploreMultiSet();
-    exploreUnorderedSet();
+    // exploreUnorderedSet();
+    exploreMap();
 }
