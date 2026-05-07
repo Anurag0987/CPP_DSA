@@ -462,6 +462,11 @@ void exploreMap(){
     cout << "Value of mp1 at key 2 with .find() is with parantheses " << (*it1).second << endl;
     cout << "Value of mp1 at key 2 with .find() is with pointer " << it1->second << endl;
 
+    // pair mp2<pair<int,int>, int> access
+    cout << "Value of mp2 at key {4,4} is " << mp2[{4,4}] << endl;
+    // .find() in pair element
+    auto it2 = mp2.find({6,9});
+    cout << "Value of mp2 at key {6,9} with .find() is with parantheses " << (*it2).second << endl;
 
 }
 
