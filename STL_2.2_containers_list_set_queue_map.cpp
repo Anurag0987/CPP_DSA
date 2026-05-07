@@ -468,6 +468,30 @@ void exploreMap(){
     auto it2 = mp2.find({6,9});
     cout << "Value of mp2 at key {6,9} with .find() is with parantheses " << (*it2).second << endl;
 
+    // if given element to .find() not exists in map points to end() or 1 -- as usual in any containers
+    auto it3 = mp1.find(99);
+    cout << "Value of mp1 at key 99 non existant point to end " << it3->second << endl;
+    auto it4 = mp1.find(199);
+    cout << "Value of mp1 at key 199 non existant point to end " << it4->second << endl;
+
+    // like any other container better to use at for finding out is it is out of range for non-existant key
+    // .at() gives direct value not iterator
+    // using .at() is safer
+    int val1 = mp1.at(3);
+    cout << "Value of mp1 at key 3 using at " << val1 << endl;
+
+    try { 
+        int val2 = mp1.at(44);
+        cout << "Value of mp1 at key 44 non existant point to end " << val2 << endl;
+    }
+    catch (const out_of_range e){
+        cerr << "Error: Key not found in mp1 Map, Details: " << e.what() << endl;
+    }
+
+    // Rest all function like erase, swap, empty, size, all same like other containers
+    cout << ".size() of mp1 - " << mp1.size() << endl;
+    cout << "is mp1 .empty() - " << mp1.empty() << endl;
+
 }
 
 int main(){
