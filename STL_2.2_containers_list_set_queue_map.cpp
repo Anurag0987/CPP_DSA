@@ -492,6 +492,12 @@ void exploreMap(){
     cout << ".size() of mp1 - " << mp1.size() << endl;
     cout << "is mp1 .empty() - " << mp1.empty() << endl;
 
+    // lower bound and upper bound
+    auto it6 = mp1.lower_bound(2);
+    cout << "Lower bound of mp1 2 is - " << (*it6).second << endl;
+
+    auto it7 = mp1.upper_bound(2);
+    cout << "Upper bound of mp1 2 is - " << (*it7).second << endl;
 }
 
 int main(){
