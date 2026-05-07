@@ -455,7 +455,12 @@ void exploreMap(){
     cout << "Value of mp1 at key 2 is " << mp1[2] << endl;
 
     // .find() works on Keys, esle 0 or Null
-    // mp1.find(2);
+    auto it1 = mp1.find(2);
+    // can't cout *it1 as it points to Map element which is pair like map<int, int>
+    // can't do *it1.second -- throws error -- due to Operator Precedence issue (.) has higher Precedence than *
+    // need to use below
+    cout << "Value of mp1 at key 2 with .find() is with parantheses " << (*it1).second << endl;
+    cout << "Value of mp1 at key 2 with .find() is with pointer " << it1->second << endl;
 
 
 }
