@@ -428,6 +428,7 @@ void exploreMap(){
     // Data Type of key and value can be anything int, double, string etc..
     // In Map the Keys are stored in Stoted Order, when finding with .find() iterators must use valid key esle gives 0 or Null
     // Sorted and Unique Keys
+    // Time Complexity -- O(log N)
 
     map<int, int> mp1;
     map<pair<int, int>, int> mp2;
@@ -527,6 +528,27 @@ void exploreMultiMap(){
 
 }
 
+void exploreUnorderedMap(){
+    // Same as Map - Not Sorted -- But Unique
+    // Time Complexity - O(1)
+    // Only in worst case it will be O(N)
+
+    unordered_map<int, int> um1;
+    um1[1] = 99;
+    um1.insert({8, 9});
+    um1.insert({5, 7});
+    um1.insert({5, 3}); // Duplicate Key Ignored
+    um1.emplace(2, 9);
+
+    cout << "elemented in Unordered Map " << endl;
+    for (auto x: um1){
+        cout << "key " << x.first << " || value " << x.second << endl;
+    }
+    cout << endl;
+
+
+}
+
 int main(){
     // exploreList();
     // exploreDeque();
@@ -537,5 +559,6 @@ int main(){
     // exploreMultiSet();
     // exploreUnorderedSet();
     // exploreMap();
-    exploreMultiMap();
+    // exploreMultiMap();
+    exploreUnorderedMap();
 }
