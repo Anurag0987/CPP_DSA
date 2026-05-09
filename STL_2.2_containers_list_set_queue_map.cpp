@@ -427,12 +427,14 @@ void exploreMap(){
     // Map stores key value pairs
     // Data Type of key and value can be anything int, double, string etc..
     // In Map the Keys are stored in Stoted Order, when finding with .find() iterators must use valid key esle gives 0 or Null
+    // Sorted and Unique Keys
 
     map<int, int> mp1;
     map<pair<int, int>, int> mp2;
 
     mp1[1] = 2;
-    mp1.insert({3,5});
+    mp1.insert({3,7});
+    mp1.insert({3,5}); // <-- Duplicated Key, Ignored to Insert
     mp1.emplace(2,6);
     
     // access key and value using .first and .second
@@ -500,6 +502,31 @@ void exploreMap(){
     cout << "Upper bound of mp1 2 is - " << (*it7).second << endl;
 }
 
+void exploreMultiMap(){
+    // Same as Map but can store duplicates -- still sorted
+    // cannot use map[key] in Multimap
+    multimap<int, int> mm1;
+    mm1.insert({1, 9});
+    mm1.insert({1, 7});
+    mm1.insert({6, 0});
+    mm1.insert({2, 99});
+
+    cout << "elemented in multimap " << endl;
+    for (auto x: mm1){
+        cout << "key " << x.first << " || value " << x.second << endl;
+    }
+    cout << endl;
+    // can't direct access values of MultiMap with Key
+    // cout << "Value of mp1 at key 2 is " << mm1[2] << endl; // <-- Won't work
+
+    // .find()
+    cout << "Value of mp1 at key 1 (duplicated key) with .find() is " << (*mm1.find(1)).second << endl; 
+    // <-- .find() of Duplicated Key in MultiMap always returns 1ts instance value
+
+    cout << ".count() of MultiMap gives how many instances in mm1 - " << mm1.count(1);
+
+}
+
 int main(){
     // exploreList();
     // exploreDeque();
@@ -509,5 +536,6 @@ int main(){
     // exploreSet();
     // exploreMultiSet();
     // exploreUnorderedSet();
-    exploreMap();
+    // exploreMap();
+    exploreMultiMap();
 }
