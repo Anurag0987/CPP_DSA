@@ -31,10 +31,31 @@ void exploreSort(){
     }
     cout << endl;
 
+    vector<int> vec2;
+    vec2.push_back(1);
+    vec2.emplace_back(2);
+    vec2.emplace_back(3);
+    vec2.emplace_back(6);
+    vec2.emplace_back(4);
+    vec2.emplace_back(5);
+
+    // ******** sort only from index 3 to 5
+    cout << "vector before sort vec2: " << endl;
+    for (auto x: vec2){
+        cout << x << " ";
+    }
+    cout << endl;
+
+    sort(vec2.begin()+3, vec2.end());
+
+    cout << "Sorted vector vec2 specific range: " << endl;
+    for (auto x: vec2){
+        cout << x << " ";
+    }
+    cout << endl;
+
 }
 
 int main (){
     exploreSort();
-
-    return 1;
 }
