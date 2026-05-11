@@ -9,6 +9,27 @@ void exploreSort(){
     // a+n -> the Last Index in container, end iterator which is end+1
     // [start, end)
     // Can proved specific range in container to get sorted rather tahn full container.
+    vector<int> vec1;
+    vec1.push_back(6);
+    vec1.emplace_back(2);
+    vec1.emplace_back(8);
+    vec1.emplace_back(1);
+    vec1.emplace_back(99);
+    vec1.emplace_back(9);
+
+    cout << "vector before sort: " << endl;
+    for (auto x: vec1){
+        cout << x << " ";
+    }
+    cout << endl;
+
+    sort(vec1.begin(), vec1.end());
+
+    cout << "Sorted vector: " << endl;
+    for (auto x: vec1){
+        cout << x << " ";
+    }
+    cout << endl;
 
 }
 
