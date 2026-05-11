@@ -30,6 +30,7 @@ void exploreSort(){
         cout << x << " ";
     }
     cout << endl;
+    cout << "------------------"<< endl;
 
     vector<int> vec2;
     vec2.push_back(1);
@@ -53,6 +54,24 @@ void exploreSort(){
         cout << x << " ";
     }
     cout << endl;
+    cout << "------------------"<< endl;
+
+    // ---------- Reverse sort ---------------
+
+    cout << "vector before reverse sort: " << endl;
+    for (auto x: vec1){
+        cout << x << " ";
+    }
+    cout << endl;
+
+    sort(vec1.begin(), vec1.end(), greater<int>());
+
+    cout << "Reverse Sorted vector: " << endl;
+    for (auto x: vec1){
+        cout << x << " ";
+    }
+    cout << endl;
+    cout << "------------------"<< endl;
 
 }
 
