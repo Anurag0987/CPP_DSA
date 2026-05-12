@@ -146,9 +146,23 @@ void exploreBuiltInPopCount(){
     int no_of_1s_3 = __builtin_popcountll(num3); // need to use ll for long long variable dataTypes
     cout << "builtin_popcount() of 68172662111902 long long is - " << no_of_1s_3 << endl;
 
+}
+
+void exploreNextPermutation(){
+    // next_permutation -- is a important method in STL that just returns the next dictionary ordered permutation of given string else NULL
+    // example -- "123" -- next_permutation() is == 231
+    // **** Remember only is dictonary order is none then returns NULL
+    
+    string s1 = "123";
+    
+    next_permutation(s1.begin(), s1.end());
+    
+    cout << "next permutation of string s1 - " << s1;
 
 }
+
 int main (){
     // exploreSort();
-    exploreBuiltInPopCount();
+    // exploreBuiltInPopCount();
+    exploreNextPermutation();
 }
