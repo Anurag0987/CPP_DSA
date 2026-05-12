@@ -1,6 +1,22 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// input parameters, element1, and element2
+// in pair, pair 1 and pair 2 -- {1, 9}, {3, 4}
+// return true if in correct order else false -- assuming p1 comes first and p2 second in order
+bool compNormalSortPair(pair<int, int> p1, pair<int, int> p2){
+    if(p1.first > p2.first) return false;
+    return true;
+}
+
+bool compAdvancedSortPair(pair<int, int> p1, pair<int, int> p2){
+    if(p1.second > p2.second) return false;
+    if(p1.second < p2.second) return true;
+    // 3rd case - in case they both match check for first element in descending
+    if(p1.first < p2.first) return false;
+    return true;
+}
+
 void exploreSort(){
     // CPP offers the .sort() function which is most efficinet for most of the cases
     // i.e,. no need to implement custo sorting techniques like Heap sort, Bubble sort etc.. for generic cases
@@ -69,6 +85,44 @@ void exploreSort(){
     cout << "Reverse Sorted vector: " << endl;
     for (auto x: vec1){
         cout << x << " ";
+    }
+    cout << endl;
+    cout << "------------------"<< endl;
+
+    // ---------- Custom sort ---------------
+    // what is user wants to have a way to order element in his desired way
+    // Comparator -- is a bool function that contains the logic to determin to return true for the desired outcome
+
+    // below is pair I want to sort according to 2nd element
+    // and if 2nd element is same then use 1ts element in decending order
+    pair<int, int> pr1[] = {{5,9}, {3,4}, {6, 4}};
+    
+    cout << "Pair before sort: " << endl;
+    for (auto x: pr1){
+        cout << "{" << x.first << ", " << x.second << "} ";
+    }
+    cout << endl;
+    cout << "------------------"<< endl;
+    // now sort() -- use comparator as pari is not sortable usually by default
+    // normal pair sort, using 1st element
+
+    sort(pr1, pr1 + 3, compNormalSortPair);
+
+    cout << "Pair after Normal sort: " << endl;
+    for (auto x: pr1){
+        cout << "{" << x.first << ", " << x.second << "} ";
+    }
+    cout << endl;
+    cout << "------------------"<< endl;
+    
+    // now the below custome sort
+    // expected outcome {{6, 4}, {3, 4}, {1, 9}}
+
+    sort(pr1, pr1 + 3, compAdvancedSortPair);
+
+    cout << "Pair after Advanced sort: " << endl;
+    for (auto x: pr1){
+        cout << "{" << x.first << ", " << x.second << "} ";
     }
     cout << endl;
     cout << "------------------"<< endl;
