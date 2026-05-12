@@ -129,6 +129,26 @@ void exploreSort(){
 
 }
 
+void exploreBuiltInPopCount(){
+    // __builtin_popcount() -- is a important method in STL that 
+    // returns the count of no. of 1's in given number in it's binary format
+
+    int num1 = 7; // binary of 7 is 00000000000000000000000000000111 - 3(1's)
+    int no_of_1s = __builtin_popcount(num1);
+
+    cout << "builtin_popcount() of 7 is - " << no_of_1s << endl;
+
+    int num2 = 6; // binary of 7 is 00000000000000000000000000000110 - 2(1's)
+    int no_of_1s_2 = __builtin_popcount(num2);
+    cout << "builtin_popcount() of 6 is - " << no_of_1s_2 << endl;
+
+    long long num3 = 68172662111902; 
+    int no_of_1s_3 = __builtin_popcountll(num3); // need to use ll for long long variable dataTypes
+    cout << "builtin_popcount() of 68172662111902 long long is - " << no_of_1s_3 << endl;
+
+
+}
 int main (){
-    exploreSort();
+    // exploreSort();
+    exploreBuiltInPopCount();
 }
