@@ -149,20 +149,53 @@ void exploreBuiltInPopCount(){
 }
 
 void exploreNextPermutation(){
-    // next_permutation -- is a important method in STL that just returns the next dictionary ordered permutation of given string else NULL
+    // next_permutation -- is a important method in STL that just returns the next dictionary/lexicographically ordered permutation of given string else NULL
     // example -- "123" -- next_permutation() is == 231
-    // **** Remember only is dictonary order is none then returns NULL
+    // **** Remember only is dictonary order is none then returns NULL -- Only in do{}while loop, 
+    // if not infinite loop
     
     string s1 = "123";
-    
+    // First permutation
     next_permutation(s1.begin(), s1.end());
-    
-    cout << "next permutation of string s1 - " << s1;
+    cout << "next permutation of string s1 - " << s1 << endl;
+
+    // repeat again until end
+    next_permutation(s1.begin(), s1.end());
+    cout << "next permutation of string s1 - " << s1 << endl;
+
+    // better way to do it is using do while
+    string s2 = "123";
+    do{
+        cout << "permutations of s2 - " << s2 << endl;
+    }while(next_permutation(s2.begin(), s2.end()));
+
+    // Infinite permutation
+    string s3 = "321";
+    next_permutation(s3.begin(), s3.end());
+    cout << "Infinite with cout next permutation of string s3 - " << s3 << endl;
+    next_permutation(s3.begin(), s3.end());
+    cout << "Infinite with cout next permutation of string s3 - " << s3 << endl;
+    next_permutation(s3.begin(), s3.end());
+    cout << "Infinite with cout next permutation of string s3 - " << s3 << endl;
+
+}
+
+void exploreMinMaxElement(){
+    // max_element(), min_element() -- traverse the contrainer and find max or min of the container respectifully
+
+    int arr1[] = {1, 6, 9, 56, 14, 7};
+    auto max_it1 = max_element(arr1, arr1+6); // <-- returns iterator
+    cout << "max element in arr1 is - " << *max_it1 << endl;
+
+    auto min_it1 = min_element(arr1, arr1+6); // <-- returns iterator
+    cout << "min element in arr1 is - " << *min_it1 << endl;
+
 
 }
 
 int main (){
     // exploreSort();
     // exploreBuiltInPopCount();
-    exploreNextPermutation();
+    // exploreNextPermutation();
+    exploreMinMaxElement();
 }
