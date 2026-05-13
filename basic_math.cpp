@@ -45,4 +45,15 @@ int main(){
     int num2 = 89871;
     cout << "Count of digits using log10 is - " << int(log10(num2)+1) << endl;
     cout << "Count of digits using log10 is - " << int(log10(78)+1) << endl;
+
+    // ****Time Complexity***** of above division
+    // Ignoring the constant operations -- in count no. of digits problem
+    // O(Log10 N)
+
+    // ****Remember*******
+    // when ever there is --division--, (log N)
+    // we are dividing problem computation by that number so it's Logx (N) - where x is number you are dividing by
+    // if x = x/2 the TC => O(log2 N)
+    // if x = x/8 the TC => O(log8 N)
+
 }
