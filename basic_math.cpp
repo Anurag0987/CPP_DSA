@@ -34,5 +34,15 @@ int main(){
         cout << num1 % 10;
         num1 = num1 / 10;
     }while(num1 != 0); 
-    
+    cout << endl;
+
+    // Count of digits -- can do using above approach
+    // Additionally -- we can do using log
+    // log10(num) + 1 => count of digits in given number
+    // ex: log10(7789) => 3.781.. => 3.781 + 1 => 4.781 => int(4.781) => 4
+
+    //Count using log
+    int num2 = 89871;
+    cout << "Count of digits using log10 is - " << int(log10(num2)+1) << endl;
+    cout << "Count of digits using log10 is - " << int(log10(78)+1) << endl;
 }
