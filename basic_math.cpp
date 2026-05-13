@@ -28,4 +28,11 @@ int main(){
     // use recursion
     extractDigitsFromNum(num1);
 
+    // while recusion is looks cool, simple while loop is more efficient
+    cout << endl << "------------------" << endl ;
+    do{
+        cout << num1 % 10;
+        num1 = num1 / 10;
+    }while(num1 != 0); 
+    
 }
