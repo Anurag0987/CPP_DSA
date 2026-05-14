@@ -12,7 +12,13 @@ void extractDigitsFromNum(int num){
 }
 
 int exploreReverseNumber(int num) {
-
+    // For reverse Just do (x*10) + lastDig
+    // ex: x = 0, num = 1234 -> lastDig = 4 -> num = 123
+    // x = (0*10) + 4 => x = 4
+    // x = (4*10) + 3 => x = 43
+    // x = (43*10) + 3 => x = 432
+    // x = (432*10) + 1 => x = 4321
+    // num = 0 ! stop
     int reversedVal = 0;
         do{
             int lastDig = num % 10;
