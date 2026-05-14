@@ -10,6 +10,18 @@ void extractDigitsFromNum(int num){
     }
     cout << lastDig; // this will print 6789 correct order
 }
+
+int exploreReverseNumber(int num) {
+
+    int reversedVal = 0;
+        do{
+            int lastDig = num % 10;
+            reversedVal = (reversedVal*10) + lastDig;
+            num = num/10;
+        } while (num != 0);
+    return reversedVal;
+}
+
 int main(){
     // Digits
     // Extract digits from given number
@@ -55,5 +67,7 @@ int main(){
     // we are dividing problem computation by that number so it's Logx (N) - where x is number you are dividing by
     // if x = x/2 the TC => O(log2 N)
     // if x = x/8 the TC => O(log8 N)
-
+    
+    int num3 = 1234;
+    cout << "Reversed Num of 1234 is - "  << exploreReverseNumber(num3) << endl;
 }
