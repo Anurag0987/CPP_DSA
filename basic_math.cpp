@@ -28,6 +28,27 @@ int exploreReverseNumber(int num) {
     return reversedVal;
 }
 
+bool isPalindrome(int x) {
+    // Special cases:
+    // 1. Negative numbers are not palindromes (e.g., -121 reversed is 121-)
+    // 2. If the last digit is 0, the first digit must also be 0 (only '0' satisfies this)
+    if (x < 0 || (x % 10 == 0 && x != 0)) {
+        return false;
+    }
+
+    int reversedHalf = 0;
+    // Reversing only up to the middle of the number
+    while (x > reversedHalf) {
+        reversedHalf = (reversedHalf * 10) + (x % 10);
+        x /= 10;
+    }
+
+    // For even-length numbers (e.g., 1221): x will be 12, reversedHalf will be 12
+    // For odd-length numbers (e.g., 12321): x will be 12, reversedHalf will be 123
+    // We can get rid of the middle digit by reversedHalf / 10
+    return x == reversedHalf || x == reversedHalf / 10;
+}
+
 int main(){
     // Digits
     // Extract digits from given number
@@ -76,4 +97,7 @@ int main(){
     
     int num3 = 1234;
     cout << "Reversed Num of 1234 is - "  << exploreReverseNumber(num3) << endl;
+
+    cout << "Is 121 palindrome - " << isPalindrome(121);
+
 }
