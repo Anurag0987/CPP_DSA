@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+#include <numeric>
 using namespace std;
 
 void extractDigitsFromNum(int num){
@@ -99,5 +100,13 @@ int main(){
     cout << "Reversed Num of 1234 is - "  << exploreReverseNumber(num3) << endl;
 
     cout << "Is 121 palindrome - " << isPalindrome(121);
+
+    int a = 24, b = 36;
+    
+    // Built-in function
+    int result = gcd(a, b); 
+    
+    cout << "GCD of " << a << " and " << b << " is: " << result << endl;
+    return 0;
 
 }
