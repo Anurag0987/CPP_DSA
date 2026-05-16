@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 #include <numeric>
+#include<cmath>
 using namespace std;
 
 void extractDigitsFromNum(int num){
@@ -49,6 +50,19 @@ bool isPalindrome(int x) {
     // We can get rid of the middle digit by reversedHalf / 10
     return x == reversedHalf || x == reversedHalf / 10;
 }
+bool exploreAmstrongNumber(int x){
+    // Amstrong Number is the number that results in same number even after summing the cubes of individual digits
+    // ex: 137 => 1^3 + 3^3 + 7^3 => 137 -- so Amstrong Number
+    // ex: 35 => 3^3 + 5^3 => 152 -- Not Amstrong Number
+    int tmp = x;
+    int cubedNum = 0;
+    while (tmp > 0){
+        int lastDig = tmp % 10;
+        tmp = tmp / 10;
+        cubedNum += pow(lastDig, 3);
+    }
+    return x == cubedNum;
+}
 
 int main(){
     // Digits
@@ -96,17 +110,17 @@ int main(){
     // if x = x/2 the TC => O(log2 N)
     // if x = x/8 the TC => O(log8 N)
     
+    //******** Palindrome *************
     int num3 = 1234;
     cout << "Reversed Num of 1234 is - "  << exploreReverseNumber(num3) << endl;
 
-    cout << "Is 121 palindrome - " << isPalindrome(121);
+    cout << "Is 121 palindrome - " << isPalindrome(121) << endl;
 
-    int a = 24, b = 36;
-    
-    // Built-in function
-    int result = gcd(a, b); 
-    
-    cout << "GCD of " << a << " and " << b << " is: " << result << endl;
-    return 0;
+    //******** Amstrong Number *************
+    cout << "Is 137 an Amstrong number? - " << exploreAmstrongNumber(137) << endl;
+
+    cout << "Is 137 an Amstrong number? - " << exploreAmstrongNumber(1634) << endl;
+
+    cout << "Is 137 an Amstrong number? - " << exploreAmstrongNumber(35) << endl;
 
 }
