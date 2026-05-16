@@ -61,6 +61,7 @@ bool exploreAmstrongNumber(int x){
         tmp = tmp / 10;
         cubedNum += pow(lastDig, 3);
     }
+    cout << "cubed num" << cubedNum << endl;
     return x == cubedNum;
 }
 
@@ -117,10 +118,10 @@ int main(){
     cout << "Is 121 palindrome - " << isPalindrome(121) << endl;
 
     //******** Amstrong Number *************
-    cout << "Is 137 an Amstrong number? - " << exploreAmstrongNumber(137) << endl;
+    cout << "Is 137 an Amstrong number? - " << exploreAmstrongNumber(157) << endl;
 
-    cout << "Is 137 an Amstrong number? - " << exploreAmstrongNumber(1634) << endl;
+    cout << "Is 1634 an Amstrong number? - " << exploreAmstrongNumber(1634) << endl;
 
-    cout << "Is 137 an Amstrong number? - " << exploreAmstrongNumber(35) << endl;
+    cout << "Is 153 an Amstrong number? - " << exploreAmstrongNumber(153) << endl;
 
 }
