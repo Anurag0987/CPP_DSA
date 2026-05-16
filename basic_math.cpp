@@ -51,18 +51,33 @@ bool isPalindrome(int x) {
     return x == reversedHalf || x == reversedHalf / 10;
 }
 bool exploreAmstrongNumber(int x){
-    // Amstrong Number is the number that results in same number even after summing the cubes of individual digits
-    // ex: 137 => 1^3 + 3^3 + 7^3 => 137 -- so Amstrong Number
-    // ex: 35 => 3^3 + 5^3 => 152 -- Not Amstrong Number
+    // Amstrong Number is the number that results in same number even after summing 
+    // the power of (total number of digits in number (len of no. of digits)) of individual digits
+    // ex: 137 => 1^3 + 5^3 + 3^3 => 153 -- so Amstrong Number
+    // ex: 35 => 3^2 + 5^2 => 34 -- Not Amstrong Number
     int tmp = x;
-    int cubedNum = 0;
+    int finalNum = 0;
+    
+    int digitSize = x;
+    int lenOfDig = 0;
+
+    while(digitSize > 0){
+        digitSize /= 10;
+        lenOfDig++;
+    }
+    
     while (tmp > 0){
         int lastDig = tmp % 10;
         tmp = tmp / 10;
-        cubedNum += pow(lastDig, 3);
+        // pow() -- built in function is CPP is for floag, so sometimes 5^3 => 124.9999 => rounds up to 124
+        int currentPowerSum = 1; 
+        for(int i=0; i<lenOfDig; i++){
+            currentPowerSum *= lastDig;
+        }
+        finalNum += currentPowerSum;
     }
-    cout << "cubed num" << cubedNum << endl;
-    return x == cubedNum;
+
+    return x == finalNum;
 }
 
 int main(){
