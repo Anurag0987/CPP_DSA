@@ -88,6 +88,23 @@ void exploreDivsors(int n){
         // If a number is completely divisible by another then leaves remonder 0
         if(n%i == 0) cout << i << " ";
     }
+    cout << endl;
+
+    // -- Faster/Efficient way O(Sqtr(N)) much faster
+    // ex: 1 * 36, 2 * 18, 3 * 12, 4 * 9, 6 * 6 -- Find in pairs till Sqrt(N)
+
+    int sqrtN = sqrt(n);
+    for(int i = 1; i <= sqrtN; i++){
+        if(n%i == 0) {
+            cout << i << ", ";
+            if(n/i != i){
+                cout << n/i << ", ";
+            }
+        }
+    }
+    cout << endl;
+
+
 }
 
 int main(){
