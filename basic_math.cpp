@@ -90,20 +90,36 @@ void exploreDivsors(int n){
     }
     cout << endl;
 
-    // -- Faster/Efficient way O(Sqtr(N)) much faster
+    // -------- Faster/Efficient way O(Sqtr(N)) much faster
     // ex: 1 * 36, 2 * 18, 3 * 12, 4 * 9, 6 * 6 -- Find in pairs till Sqrt(N)
 
+    // To sort use Containers
+    // Store in Vector and Sort later
+    vector<int> vec1;
+
+    // Instead if sqrt(n), we can also do [i * i <= n]
+    // ex: 6 * 6 <= 36 -> True
+    // ex: 7 * 7 <= 36 -> False
     int sqrtN = sqrt(n);
+    // TC - O(sqrt(n))
     for(int i = 1; i <= sqrtN; i++){
         if(n%i == 0) {
-            cout << i << ", ";
+            vec1.push_back(i);
             if(n/i != i){
-                cout << n/i << ", ";
+                vec1.push_back(n/i);
             }
         }
     }
+    // TC - O(d log d) -- d => represents divisors of 'n' which is extremeny small amount
+    // Even for a massive number like $n = 100,000,000$, the maximum number of divisors it can possibly have is only $768$.
+    sort(vec1.begin(), vec1.end());
+    // TC - O(d)
+    for(auto x: vec1){
+        cout << x << " ";
+    }
     cout << endl;
 
+    // Total TC - O(sqrt(n)) + O(d log d) + O(d) ~= O(2*sqrt(N)) ~= O(sqrt(N))
 
 }
 
