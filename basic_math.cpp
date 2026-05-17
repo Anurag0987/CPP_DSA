@@ -80,6 +80,16 @@ bool exploreAmstrongNumber(int x){
     return x == finalNum;
 }
 
+void exploreDivsors(int n){
+    // Brute force -- [TC => O(N)]
+    // ex: 36 - 1, 2, 3, 4, 6, 9, 12, 18, 36
+
+    for(int i = 1; i <= n; i++){
+        // If a number is completely divisible by another then leaves remonder 0
+        if(n%i == 0) cout << i << " ";
+    }
+}
+
 int main(){
     // Digits
     // Extract digits from given number
@@ -138,5 +148,7 @@ int main(){
     cout << "Is 1634 an Amstrong number? - " << exploreAmstrongNumber(1634) << endl;
 
     cout << "Is 153 an Amstrong number? - " << exploreAmstrongNumber(153) << endl;
-
+    
+    // ******* Print all Divisors of a numbers
+    exploreDivsors(36);
 }
