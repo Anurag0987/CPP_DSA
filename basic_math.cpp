@@ -123,6 +123,23 @@ void exploreDivsors(int n){
 
 }
 
+void explorePrimeNumber(int n){
+    // Brute Force approach TC - O(n)
+    int count = 0;
+
+    for(int i=1; i<=n; i++){
+        if(n%i == 0) count++;
+    }
+
+    if(count == 2 || n == 1){
+        cout << n << " is Prime Number" << endl;
+    }
+    else{
+        cout << n << " is Not Prime Number" << endl;
+    }
+    
+}
+
 int main(){
     // Digits
     // Extract digits from given number
@@ -184,4 +201,12 @@ int main(){
     
     // ******* Print all Divisors of a numbers
     exploreDivsors(36);
+
+    //******* Prime Numbers - numbers which have only 2 factors - 1 and itself
+    // ex: 1, 3, 7, 13, 11, 19 ...
+    explorePrimeNumber(11);
+    explorePrimeNumber(19);
+    explorePrimeNumber(1);
+    explorePrimeNumber(14);
+    explorePrimeNumber(9);
 }
