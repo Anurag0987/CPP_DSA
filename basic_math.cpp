@@ -140,6 +140,30 @@ void explorePrimeNumber(int n){
     
 }
 
+void explorePrimeNumberBetter(int n){
+    // Better approach TC - O(sqrt(N))
+    int count = 0;
+    int sqrtN = sqrt(n);
+    for(int i=1; i<=sqrtN; i++){
+        if(n%i == 0){
+            if(n/i != i){
+                count += 2;
+            }else{
+                count += 1;
+            }
+        }
+    }
+
+    if(count == 2 || n == 1){
+        cout << n << " is Prime Number" << endl;
+    }
+    else{
+        cout << n << " is Not Prime Number" << endl;
+    }
+    
+}
+
+
 int main(){
     // Digits
     // Extract digits from given number
@@ -209,4 +233,10 @@ int main(){
     explorePrimeNumber(1);
     explorePrimeNumber(14);
     explorePrimeNumber(9);
+
+    explorePrimeNumberBetter(11);
+    explorePrimeNumberBetter(19);
+    explorePrimeNumberBetter(1);
+    explorePrimeNumberBetter(14);
+    explorePrimeNumberBetter(9);
 }
