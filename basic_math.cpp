@@ -239,4 +239,12 @@ int main(){
     explorePrimeNumberBetter(1);
     explorePrimeNumberBetter(14);
     explorePrimeNumberBetter(9);
+
+    // ******** GCD/HCF
+    // Greatest Common Devisor, or Highest Common Factor
+    // Basically find a largest common factor between 2 given numbers
+    // ex: N1=9, N2=12
+    // N1_Factores = 1, 3, 9
+    // N2_Factores = 1, 2, 3, 4, 6, 12
+    // GCD of (9, 12) - 3
 }
