@@ -163,6 +163,26 @@ void explorePrimeNumberBetter(int n){
     
 }
 
+void exploreGCD(int n1, int n2){
+    int minNum = min(n1, n2);
+    // loop till minimum of N1, N2 and find which divides both and greatest
+    // doing in reverse can be more efficient as we need to find Highest number
+    // but still TC = O(min(N1, N2))
+    // as ex: GCD(11, 13) - 1, so need to loop all to get the digit
+
+    int greatestFactor = 1;
+    for (int i = minNum; i > 1; i--)
+    {
+        if(n1 % i ==0 && n2 % i == 0){
+            greatestFactor = i;
+            break;
+        }
+    }
+    
+    cout << "GCD of " << "(" <<n1 << ", " << n2 << ") is - " << greatestFactor << endl;
+
+}
+
 
 int main(){
     // Digits
@@ -247,4 +267,10 @@ int main(){
     // N1_Factores = 1, 3, 9
     // N2_Factores = 1, 2, 3, 4, 6, 12
     // GCD of (9, 12) - 3
+    // GCD of (20, 40) - 20
+    // GCD of (11, 13) - 1
+
+    exploreGCD(9, 12);
+    exploreGCD(20, 40);
+    exploreGCD(11, 13);
 }
