@@ -193,6 +193,16 @@ void exploreEuclideanAlgo(int a, int b){
     }
 }
 
+void exploreEuclideanAlgoMod(int a, int b){
+    while( a > 0 && b > 0){
+        if(a >= b) a = a % b;
+        else b = b % a;
+    }
+    if(a == 0) cout << "GCD using Euclidean Mod - " << b <<endl;
+    else cout << "GCD using Euclidean Mod - " << a <<endl;
+
+}
+
 
 
 int main(){
@@ -318,4 +328,9 @@ int main(){
     // --> log because we are dividing the no. of operations in each step
     // --> phi - symbol means just placeholder for no. of steps as each step modulos changes
     // --> min(a, b) as the steps run while ever number is min
+    exploreEuclideanAlgoMod(58, 98);
+    exploreEuclideanAlgoMod(52, 10);
+    exploreEuclideanAlgoMod(99, 100);
+    exploreEuclideanAlgoMod(20, 40);
+
 }
