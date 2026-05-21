@@ -273,4 +273,19 @@ int main(){
     exploreGCD(9, 12);
     exploreGCD(20, 40);
     exploreGCD(11, 13);
+
+    // ****** Euclidean Algorithm
+    // GCD(a, b) = GCD(a-b, b) where a >= b
+    // Ex: GCD(15, 5) = 5
+    // Using Euclidean Algo
+    // GCD(15, 5) = GCD(15-5, 5) => GCD(10, 5)
+    // GCD(10, 5) = GCD(10-5, 5) => GCD(5, 5)
+    // GCD(5, 5) = GCD(5-5, 5) => GCD(0, 5)
+    // Once any one of factor becomes 0, the remaining factor is the answer
+    //
+    // Ex2: GCD(12, 9) = 3
+    // GCD(12, 9) = GCD(12-9, 9) => GCD(3, 9) <<-- Swap programatically
+    // GCD(9, 3) = GCD(9-3, 3) => GCD(6, 3)
+    // GCD(6, 3) = GCD(6-3, 3) => GCD(0, 3)
+    // GCD(3, 3) = GCD(3-3, 3) => GCD(0, 3)
 }
