@@ -184,16 +184,12 @@ void exploreGCD(int n1, int n2){
 }
 
 void exploreEuclideanAlgo(int a, int b){
-    if(a == 0) cout << "the GCD of " << "(" <<a << ", " << b << ") is - " << b << endl;
-
-    if(a >= b) {
+    if(a == 0) {
+        cout << "the GCD (using exclidean) of " << "(" <<a << ", " << b << ") is - " << b << endl;
+    } else {
+        if(a < b) swap(a, b);
         a = a - b;
         exploreEuclideanAlgo(a, b);
-    }
-    else {
-        int tmp = a;
-        a = b;
-        exploreEuclideanAlgo(b, a);
     }
 }
 
@@ -306,4 +302,7 @@ int main(){
 
     // Using Euclidian Algo we can quickly find the GCD of any given 2 numbers, without looping all numbers
     exploreEuclideanAlgo(20, 40);
+    exploreEuclideanAlgo(13, 11);
+    exploreEuclideanAlgo(50, 40);
+    exploreEuclideanAlgo(58, 98);
 }
