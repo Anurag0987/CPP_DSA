@@ -305,4 +305,17 @@ int main(){
     exploreEuclideanAlgo(13, 11);
     exploreEuclideanAlgo(50, 40);
     exploreEuclideanAlgo(58, 98);
+    /// ************* This is not efficient , example GCD(52, 10) takes 10+ steps
+    // So to Imporve it use % to divide big num by small num until on is 0 and remianing num is answer
+    // Before %
+    // Ex: GCD(52, 10) = GCD(52-10, 10) -> GCD(42, 10) -> GCD(32, 10)
+    // -> GCD(22, 10) -> GCD(12, 10) -> GCD(2, 10) -> GCD(10-2, 2) -> GCD(8, 2)
+    // -> GCD(6, 2) -> GCD(4, 2) -> GCD(2, 2) -> GCD(0, 2) => 2
+    // After %
+    // GCD(52, 10) -> GCD(52 % 10, 10) -> GCD(2, 10) -> GCD(10 % 2, 2) -> GCD(0, 2) => 2 -- Easy and efficient
+    // with using modulo -- The Time Complexity of finding GCD of 2 no. using Euclidean Algo is
+    // ********* TC = O(log(phi) min(a, b)) *****************
+    // --> log because we are dividing the no. of operations in each step
+    // --> phi - symbol means just placeholder for no. of steps as each step modulos changes
+    // --> min(a, b) as the steps run while ever number is min
 }
