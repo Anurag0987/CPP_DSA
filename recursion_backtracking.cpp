@@ -13,10 +13,21 @@ void recursionBackTracking1toN(int n){
     // This is called ****Backtracking****
 }
 
+void recursionBackTrackingNto1(int n){
+    int count = 1;
+    if(n < 1) return;
+    recursionBackTracking1toN(n-1);
+    count++;
+    cout << "Value of N - " << count << endl; // <-- 1st Print is executed at last
+}
+
 int main(){
     // Problem Statement - Print 1 - N using recursion and *Backtracking*
     int n;
     cin >> n;
 
-    recursionBackTracking1toN(n);
+    // recursionBackTracking1toN(n);
+
+    // Problem Statement - Print N - 1 using recursion and *Backtracking*
+    recursionBackTrackingNto1(n);
 }
