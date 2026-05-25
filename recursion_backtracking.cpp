@@ -13,12 +13,11 @@ void recursionBackTracking1toN(int n){
     // This is called ****Backtracking****
 }
 
-void recursionBackTrackingNto1(int n){
-    int count = 1;
+void recursionBackTrackingNto1(int n, int i=0){
+    i++;
     if(n < 1) return;
-    recursionBackTracking1toN(n-1);
-    count++;
-    cout << "Value of N - " << count << endl; // <-- 1st Print is executed at last
+    recursionBackTrackingNto1(n-1, i);
+    cout << "Value of N - " << i << endl; // <-- 1st Print is executed at last
 }
 
 int main(){
