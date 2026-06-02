@@ -17,6 +17,13 @@ int exploreFunctionalRecursion(int n){
     return n + exploreFunctionalRecursion(n-1);
 }
 
+int factorialOfN(int n){
+    if (n < 1) return 0;
+    if(n == 1) return 1;
+
+    return n * factorialOfN(n-1);
+}
+
 
 int main(){
     // Recursion can be 2 forms parameterised way and functional way
@@ -24,10 +31,13 @@ int main(){
     // functional -- use the function itself and return
 
     // print summation of n
-    int n = 3;
+    int n = 4;
     exploreParameterisedRecursion(n);
 
     cout << "Summation of "<< n << " using functional recursion is - " << exploreFunctionalRecursion(n) << endl;
+
+    
+    cout << "Factorial of "<< n << " using functional recursion is - " << factorialOfN(n) << endl;
 
     return 0;
 }
