@@ -10,6 +10,13 @@ void exploreParameterisedRecursion(int n, int sum=0){
     exploreParameterisedRecursion(n-1, sum+n);
 }
 
+int exploreFunctionalRecursion(int n){
+    if(n < 1){
+        return 0;
+    }
+    return n + exploreFunctionalRecursion(n-1);
+}
+
 
 int main(){
     // Recursion can be 2 forms parameterised way and functional way
@@ -17,7 +24,10 @@ int main(){
     // functional -- use the function itself and return
 
     // print summation of n
-    exploreParameterisedRecursion(3);
+    int n = 3;
+    exploreParameterisedRecursion(n);
+
+    cout << "Summation of "<< n << " using functional recursion is - " << exploreFunctionalRecursion(n) << endl;
 
     return 0;
 }
