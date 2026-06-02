@@ -39,5 +39,13 @@ int main(){
     
     cout << "Factorial of "<< n << " using functional recursion is - " << factorialOfN(n) << endl;
 
+    // Space and Time complexities
+    // Mostly both have same time and space complexities
+    // O(N) & O(N)
+    // In optimized case in parameterised recursion only the space complexity can be O(1)
+
+    // why space complexity is O(N)?
+    // since each call waits for next call to complete, the memory of each function call is stored in stack until last one is done.
+
     return 0;
 }
