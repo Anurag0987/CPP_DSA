@@ -25,6 +25,12 @@ int factorialOfN(int n){
 }
 
 
+int fib(int n) {
+    if (n <= 1) return n; // Base cases
+    return fib(n - 1) + fib(n - 2); // Unfinished business: the '+' sign
+}
+
+
 int main(){
     // Recursion can be 2 forms parameterised way and functional way
     // parameterised -- passing direct parameters into function
@@ -46,6 +52,10 @@ int main(){
 
     // why space complexity is O(N)?
     // since each call waits for next call to complete, the memory of each function call is stored in stack until last one is done.
+
+
+    // More functinal recursion prooblems
+    fib(n);
 
     return 0;
 }
