@@ -55,7 +55,7 @@ int main(){
 
 
     // More functinal recursion prooblems
-    fib(n);
+    cout << "The nth = "<< n << " fibonacci series using functional recursion is - " << fib(n) << endl;
 
     return 0;
 }
