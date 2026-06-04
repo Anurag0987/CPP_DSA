@@ -30,6 +30,10 @@ int fib(int n) {
     return fib(n - 1) + fib(n - 2); // Unfinished business: the '+' sign
 }
 
+string reverseString(string s) {
+    if (s.length() <= 1) return s; 
+    return reverseString(s.substr(1)) + s[0]; 
+}
 
 int main(){
     // Recursion can be 2 forms parameterised way and functional way
@@ -56,6 +60,9 @@ int main(){
 
     // More functinal recursion prooblems
     cout << "The nth = "<< n << " fibonacci series using functional recursion is - " << fib(n) << endl;
+
+    string str = "Animal";
+    cout << "The sring reversal using functional recursion - " << reverseString(str) << endl;
 
     return 0;
 }
